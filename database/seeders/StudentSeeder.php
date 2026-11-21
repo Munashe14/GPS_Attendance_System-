@@ -13,8 +13,9 @@ class StudentSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Student::create([
+        \App\Models\Student::firstOrCreate([
             'pin' => 'STU001',
+        ], [
             'full_name' => 'John Moyo',
             'programme' => 'BSc Computer Science',
             'zou_email' => 'john.moyo@zou.ac.zw',
@@ -23,8 +24,9 @@ class StudentSeeder extends Seeder
             'status' => 'Active',
         ]);
 
-        \App\Models\Student::create([
+        \App\Models\Student::firstOrCreate([
             'pin' => 'STU002',
+        ], [
             'full_name' => 'Sarah Chikwinya',
             'programme' => 'BSc Computer Science',
             'zou_email' => 'sarah.chikwinya@zou.ac.zw',
@@ -33,8 +35,9 @@ class StudentSeeder extends Seeder
             'status' => 'Active',
         ]);
 
-        \App\Models\Student::create([
+        \App\Models\Student::firstOrCreate([
             'pin' => 'STU003',
+        ], [
             'full_name' => 'Tendai Ndlovu',
             'programme' => 'BBA',
             'zou_email' => 'tendai.ndlovu@zou.ac.zw',

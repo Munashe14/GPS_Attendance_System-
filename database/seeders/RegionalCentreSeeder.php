@@ -13,8 +13,9 @@ class RegionalCentreSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\RegionalCentre::create([
+        \App\Models\RegionalCentre::firstOrCreate([
             'centre_name' => 'Harare Campus',
+        ], [
             'province' => 'Harare',
             'latitude' => -17.8292,
             'longitude' => 31.0522,
@@ -22,8 +23,9 @@ class RegionalCentreSeeder extends Seeder
             'status' => 'Active',
         ]);
 
-        \App\Models\RegionalCentre::create([
+        \App\Models\RegionalCentre::firstOrCreate([
             'centre_name' => 'Bulawayo Campus',
+        ], [
             'province' => 'Bulawayo',
             'latitude' => -20.1500,
             'longitude' => 28.5833,
@@ -31,8 +33,9 @@ class RegionalCentreSeeder extends Seeder
             'status' => 'Active',
         ]);
 
-        \App\Models\RegionalCentre::create([
+        \App\Models\RegionalCentre::firstOrCreate([
             'centre_name' => 'Mutare Campus',
+        ], [
             'province' => 'Manicaland',
             'latitude' => -18.9700,
             'longitude' => 32.6700,

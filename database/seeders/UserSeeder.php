@@ -14,8 +14,9 @@ class UserSeeder extends Seeder
     public function run()
     {
         // Student user
-        \App\Models\User::create([
+        \App\Models\User::firstOrCreate([
             'username' => 'student',
+        ], [
             'password' => bcrypt('password'),
             'role' => 'Student',
             'linked_id' => 1,
@@ -23,8 +24,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Lecturer user
-        \App\Models\User::create([
+        \App\Models\User::firstOrCreate([
             'username' => 'lecturer',
+        ], [
             'password' => bcrypt('password'),
             'role' => 'Lecturer',
             'linked_id' => null,
@@ -32,8 +34,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Regional Admin user
-        \App\Models\User::create([
+        \App\Models\User::firstOrCreate([
             'username' => 'regional_admin',
+        ], [
             'password' => bcrypt('password'),
             'role' => 'RegionalAdmin',
             'linked_id' => null,
@@ -41,8 +44,9 @@ class UserSeeder extends Seeder
         ]);
 
         // System Admin user
-        \App\Models\User::create([
+        \App\Models\User::firstOrCreate([
             'username' => 'admin',
+        ], [
             'password' => bcrypt('password'),
             'role' => 'SysAdmin',
             'linked_id' => null,

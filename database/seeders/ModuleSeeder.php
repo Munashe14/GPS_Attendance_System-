@@ -13,20 +13,23 @@ class ModuleSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Module::create([
+        \App\Models\Module::firstOrCreate([
             'module_code' => 'CS101',
+        ], [
             'module_name' => 'Introduction to Computer Science',
             'programme' => 'BSc Computer Science',
         ]);
 
-        \App\Models\Module::create([
+        \App\Models\Module::firstOrCreate([
             'module_code' => 'MATH201',
+        ], [
             'module_name' => 'Calculus II',
             'programme' => 'BSc Mathematics',
         ]);
 
-        \App\Models\Module::create([
+        \App\Models\Module::firstOrCreate([
             'module_code' => 'BUS301',
+        ], [
             'module_name' => 'Business Management',
             'programme' => 'BBA',
         ]);

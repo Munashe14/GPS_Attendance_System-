@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         libcurl4-openssl-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
+        libonig-dev \
         libpng-dev \
         libsqlite3-dev \
         libzip-dev \

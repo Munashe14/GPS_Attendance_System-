@@ -30,4 +30,4 @@ RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoload
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R ug+rwx storage bootstrap/cache
 
-CMD ["sh", "-c", "mkdir -p /var/data && chown -R www-data:www-data /var/data && sed -ri 's/^Listen .*/Listen ${PORT}/' /etc/apache2/ports.conf && sed -ri 's/<VirtualHost \\*:.*>/<VirtualHost *:${PORT}>/' /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
+CMD ["sh", "-c", "mkdir -p \"$(dirname \"$DB_DATABASE\")\" && touch \"$DB_DATABASE\" && chown -R www-data:www-data \"$(dirname \"$DB_DATABASE\")\" && php artisan migrate --force && php artisan db:seed --force && sed -ri 's/^Listen .*/Listen ${PORT}/' /etc/apache2/ports.conf && sed -ri 's/<VirtualHost \\*:.*>/<VirtualHost *:${PORT}>/' /etc/apache2/sites-available/000-default.conf && apache2-foreground"]
